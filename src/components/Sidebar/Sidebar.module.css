@@ -1,22 +1,26 @@
 .sidebar {
-  width: 260px;
-  min-width: 260px;
+  position: absolute;
+  top: 64px;
+  left: 12px;
+  bottom: 12px;
+  width: 250px;
+  z-index: 20;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border-right: 1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              min-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+              opacity 0.2s ease;
+  box-shadow: var(--shadow-lg);
 }
 
 .sidebar.collapsed {
-  width: 56px;
-  min-width: 56px;
+  width: 52px;
 }
 
 /* ─── Collapse Toggle ────────────────────────────────── */

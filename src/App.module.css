@@ -5,6 +5,7 @@
   overflow: hidden;
   background: var(--bg-app);
   transition: background 0.3s ease;
+  position: relative;
 }
 
 /* ─── Canvas Area ────────────────────────────────────── */
