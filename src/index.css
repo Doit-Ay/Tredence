@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT MODE (default)
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  /* ─── Surfaces ─────────────────────────────────────── */
+  --bg-app: #f5f3ef;
+  --bg-surface: rgba(255, 255, 255, 0.72);
+  --bg-elevated: rgba(255, 255, 255, 0.9);
+  --bg-input: #ffffff;
+  --bg-canvas: #f0ede8;
+
+  /* ─── Borders ──────────────────────────────────────── */
+  --border: rgba(0, 0, 0, 0.07);
+  --border-hover: rgba(0, 0, 0, 0.14);
+  --border-strong: rgba(0, 0, 0, 0.12);
+
+  /* ─── Text ─────────────────────────────────────────── */
+  --text-primary: #1a1a2e;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  /* ─── Accent: Tredence Teal ────────────────────────── */
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --accent-soft: rgba(13, 148, 136, 0.1);
+  --accent-ring: rgba(13, 148, 136, 0.25);
+
+  /* ─── Semantic ─────────────────────────────────────── */
+  --danger: #ef4444;
+  --danger-soft: rgba(239, 68, 68, 0.08);
+  --success: #10b981;
+  --success-soft: rgba(16, 185, 129, 0.08);
+  --warning: #f59e0b;
+  --warning-soft: rgba(245, 158, 11, 0.08);
+  --coral: #f97316;
+
+  /* ─── Node Colors ──────────────────────────────────── */
+  --node-start: #10b981;
+  --node-task: #3b82f6;
+  --node-approval: #f59e0b;
+  --node-automated: #8b5cf6;
+  --node-end: #ef4444;
+
+  /* ─── Glass ────────────────────────────────────────── */
+  --glass-blur: blur(20px);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.5);
+
+  /* ─── Shadows ──────────────────────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(13, 148, 136, 0.15);
+
+  /* ─── Nodes (theme-aware) ──────────────────────────── */
+  --node-bg: rgba(255, 255, 255, 0.85);
+  --node-border: rgba(0, 0, 0, 0.06);
+  --node-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.06);
+  --node-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.08);
+  --handle-bg: white;
+  --badge-border: var(--bg-canvas);
+
+  /* ─── Canvas edges ─────────────────────────────────── */
+  --edge-stroke: #94a3b8;
+  --canvas-dot: rgba(0, 0, 0, 0.08);
+  --minimap-mask: rgba(245, 243, 239, 0.75);
+  --minimap-bg: rgba(255, 255, 255, 0.7);
+  --minimap-node: rgba(255, 255, 255, 0.9);
+  --minimap-stroke: rgba(0, 0, 0, 0.08);
+
+  /* ─── Overlay ──────────────────────────────────────── */
+  --overlay-bg: rgba(0, 0, 0, 0.3);
+  --modal-bg: rgba(255, 255, 255, 0.92);
+  --modal-border: rgba(255, 255, 255, 0.6);
+
+  /* ─── Card hover ───────────────────────────────────── */
+  --card-hover-bg: white;
+  --option-bg: white;
+
+  /* ─── Typography ───────────────────────────────────── */
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: light;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg-app: #0f1117;
+  --bg-surface: rgba(22, 24, 33, 0.85);
+  --bg-elevated: rgba(30, 33, 44, 0.9);
+  --bg-input: #1e2130;
+  --bg-canvas: #141620;
+
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.1);
+
+  --text-primary: #e8eaf0;
+  --text-secondary: #9ca3b4;
+  --text-muted: #5c6370;
+
+  --accent: #2dd4bf;
+  --accent-hover: #14b8a6;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --accent-ring: rgba(45, 212, 191, 0.25);
+
+  --danger-soft: rgba(239, 68, 68, 0.12);
+  --success-soft: rgba(16, 185, 129, 0.12);
+  --warning-soft: rgba(245, 158, 11, 0.12);
+
+  --glass-bg: rgba(22, 24, 33, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.06);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(45, 212, 191, 0.15);
+
+  --node-bg: rgba(22, 24, 33, 0.9);
+  --node-border: rgba(255, 255, 255, 0.08);
+  --node-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.3);
+  --node-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.4);
+  --handle-bg: #1e2130;
+  --badge-border: var(--bg-canvas);
+
+  --edge-stroke: #5c6370;
+  --canvas-dot: rgba(255, 255, 255, 0.06);
+  --minimap-mask: rgba(15, 17, 23, 0.75);
+  --minimap-bg: rgba(22, 24, 33, 0.7);
+  --minimap-node: rgba(30, 33, 44, 0.9);
+  --minimap-stroke: rgba(255, 255, 255, 0.08);
+
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --modal-bg: rgba(22, 24, 33, 0.95);
+  --modal-border: rgba(255, 255, 255, 0.08);
+
+  --card-hover-bg: rgba(30, 33, 44, 0.8);
+  --option-bg: #1e2130;
+
+  color-scheme: dark;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* ─── React Flow Overrides ───────────────────────────── */
+.react-flow__controls {
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-md) !important;
+  backdrop-filter: var(--glass-blur);
+  background: var(--glass-bg) !important;
+}
+
+.react-flow__controls-button {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text-secondary) !important;
+  fill: var(--text-secondary) !important;
+  width: 30px !important;
+  height: 30px !important;
+  transition: all 0.15s ease !important;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--accent-soft) !important;
+  color: var(--accent) !important;
+  fill: var(--accent) !important;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none !important;
+}
+
+.react-flow__minimap {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--shadow-md) !important;
+  backdrop-filter: var(--glass-blur);
+}
+
+.react-flow__edge-path {
+  stroke-linecap: round;
+}
+
+.react-flow__panel {
+  margin: 12px !important;
+}
+
+/* ─── Animations ─────────────────────────────────────── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(13, 148, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Selection ──────────────────────────────────────── */
+::selection {
+  background: rgba(13, 148, 136, 0.15);
+  color: var(--text-primary);
+}
+
+/* ─── Focus States ───────────────────────────────────── */
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-ring) !important;
+  outline: none;
+}
+
+option {
+  background: var(--option-bg);
+  color: var(--text-primary);
+}

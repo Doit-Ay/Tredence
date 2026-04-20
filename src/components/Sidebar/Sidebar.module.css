@@ -1,0 +1,305 @@
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              min-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.sidebar.collapsed {
+  width: 56px;
+  min-width: 56px;
+}
+
+/* ─── Collapse Toggle ────────────────────────────────── */
+.collapseToggle {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.collapseToggle:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-ring);
+}
+
+.collapsed .collapseToggle {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* ─── Section Titles ─────────────────────────────────── */
+.sidebarTitle {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  padding: 18px 16px 8px;
+  transition: opacity 0.2s;
+}
+
+.collapsed .sidebarTitle {
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ─── Node Cards ─────────────────────────────────────── */
+.nodeCardList {
+  padding: 0 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nodeCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: grab;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  background: transparent;
+  user-select: none;
+  animation: fadeInUp 0.3s ease both;
+}
+
+.nodeCard:nth-child(1) { animation-delay: 0.02s; }
+.nodeCard:nth-child(2) { animation-delay: 0.04s; }
+.nodeCard:nth-child(3) { animation-delay: 0.06s; }
+.nodeCard:nth-child(4) { animation-delay: 0.08s; }
+.nodeCard:nth-child(5) { animation-delay: 0.10s; }
+
+.nodeCard:hover {
+  background: var(--card-hover-bg);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.nodeCard:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+.collapsed .nodeCard {
+  justify-content: center;
+  padding: 10px;
+}
+
+/* ─── Card Icon ──────────────────────────────────────── */
+.cardIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nodeCard:hover .cardIcon {
+  transform: scale(1.05);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  transition: opacity 0.2s;
+}
+
+.collapsed .cardInfo {
+  display: none;
+}
+
+.cardName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* ─── Icon Themes ────────────────────────────────────── */
+.iconStart { background: rgba(16, 185, 129, 0.1); color: var(--node-start); }
+.iconTask { background: rgba(59, 130, 246, 0.1); color: var(--node-task); }
+.iconApproval { background: rgba(245, 158, 11, 0.1); color: var(--node-approval); }
+.iconAutomated { background: rgba(139, 92, 246, 0.1); color: var(--node-automated); }
+.iconEnd { background: rgba(239, 68, 68, 0.1); color: var(--node-end); }
+
+/* ─── Divider ────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+  margin: 8px 16px;
+}
+
+.collapsed .divider {
+  margin: 8px;
+}
+
+/* ─── Templates ──────────────────────────────────────── */
+.templateList {
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.templateCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.templateCard:hover {
+  background: var(--card-hover-bg);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.collapsed .templateCard {
+  justify-content: center;
+  padding: 10px;
+}
+
+.templateIcon {
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  flex-shrink: 0;
+}
+
+.templateInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
+  transition: opacity 0.2s;
+}
+
+.collapsed .templateInfo {
+  display: none;
+}
+
+.templateName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.templateDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* ─── Toolbar ────────────────────────────────────────── */
+.toolbarSection {
+  margin-top: auto;
+  padding: 10px 8px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toolbarButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.toolbarButton:hover {
+  background: var(--card-hover-bg);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.toolbarButton:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.toolbarButton:disabled:hover {
+  background: transparent;
+  color: var(--text-secondary);
+  box-shadow: none;
+}
+
+.danger:hover {
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.collapsed .toolbarButton {
+  justify-content: center;
+  padding: 10px;
+}
+
+.toolbarRow {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.toolbarRow .toolbarButton {
+  flex: 1;
+  justify-content: center;
+  padding: 8px;
+}

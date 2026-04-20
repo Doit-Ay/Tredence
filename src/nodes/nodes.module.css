@@ -1,0 +1,166 @@
+.nodeBase {
+  min-width: 180px;
+  max-width: 210px;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--node-border);
+  background: var(--node-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--node-shadow);
+}
+
+.nodeBase:hover {
+  box-shadow: var(--node-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.nodeBase.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-ring), 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Top Color Band ─────────────────────────────────── */
+.nodeTypeBar {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 0;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+}
+
+/* ─── Header ─────────────────────────────────────────── */
+.nodeHeader {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.nodeIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nodeBase:hover .nodeIcon {
+  transform: scale(1.05);
+}
+
+.nodeTitle {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+  letter-spacing: -0.2px;
+}
+
+.nodeSubtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  padding-left: 39px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+}
+
+/* ─── Validation Badge ───────────────────────────────── */
+.validationBadge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  z-index: 10;
+  border: 2px solid var(--bg-canvas);
+  animation: scaleIn 0.2s ease;
+}
+
+.badgeError {
+  background: var(--danger);
+  color: white;
+}
+
+.badgeWarning {
+  background: var(--warning);
+  color: white;
+}
+
+/* ─── Node Themes ────────────────────────────────────── */
+.startNode .nodeIcon {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--node-start);
+}
+.startNode .nodeTypeBar {
+  background: linear-gradient(90deg, var(--node-start), #34d399);
+}
+
+.taskNode .nodeIcon {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--node-task);
+}
+.taskNode .nodeTypeBar {
+  background: linear-gradient(90deg, var(--node-task), #60a5fa);
+}
+
+.approvalNode .nodeIcon {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--node-approval);
+}
+.approvalNode .nodeTypeBar {
+  background: linear-gradient(90deg, var(--node-approval), #fbbf24);
+}
+
+.automatedNode .nodeIcon {
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--node-automated);
+}
+.automatedNode .nodeTypeBar {
+  background: linear-gradient(90deg, var(--node-automated), #a78bfa);
+}
+
+.endNode .nodeIcon {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--node-end);
+}
+.endNode .nodeTypeBar {
+  background: linear-gradient(90deg, var(--node-end), #f87171);
+}
+
+/* ─── Handles ────────────────────────────────────────── */
+.handleTarget, .handleSource {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  border: 2px solid var(--text-muted) !important;
+  background: var(--handle-bg) !important;
+  transition: all 0.2s ease;
+}
+
+.handleTarget:hover, .handleSource:hover {
+  border-color: var(--accent) !important;
+  background: var(--accent) !important;
+  transform: scale(1.4);
+  box-shadow: 0 0 8px rgba(13, 148, 136, 0.3);
+}
