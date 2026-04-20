@@ -1,6 +1,8 @@
 # HR Workflow Designer
 
-A React + TypeScript prototype for visually designing HR workflows. Built for the Tredence full-stack engineering case study.
+> **🔗 Live Demo:** [https://doit-ay.github.io/Tredence/](https://doit-ay.github.io/Tredence/)
+
+A React + TypeScript prototype for visually designing HR workflows. Built for the Tredence full-stack engineering case study. Features a **Studio Glass** design system with dark/light mode, frosted-glass surfaces, and the Outfit typeface.
 
 Users can drag workflow nodes onto a canvas, connect them with edges, configure each node through type-specific forms, and run a simulated execution to validate the workflow structure.
 
